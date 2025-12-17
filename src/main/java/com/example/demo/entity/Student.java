@@ -20,11 +20,24 @@ public class Student{
     public void setName(String name){
         this.name=name;
     }
-    public String getdept(){
+    public String getDept() {
         return dept;
     }
-    public void setName(String deptname){
-        this.deptname=name;
+    public void setDept(String dept) {
+        this.dept = dept;
+    }    
+    public LocalDate getDob() {
+        return dob;
+    }
+    public void setDob(LocalDate dob) {
+        this.dob = dob;
+    }
+
+    public float getCgpa() {
+        return cgpa;
+    }
+    public void setCgpa(float cgpa){
+        this.cgpa=cgpa;
     }
     
 }
