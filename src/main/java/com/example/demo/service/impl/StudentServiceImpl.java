@@ -9,7 +9,7 @@ import com.example.demo.repository.StudentRepository;
 @service
 public class StudentServiceImpl implements StudentService{
     @Autowired
-    StudentRepository stdreps;
+    StudentRepository stdrepo;
     @override
     public student poststudent(student st){
         return stdrepo.save(st);
