@@ -1,4 +1,5 @@
 package.com.example.demo.service;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.demo.service.StudentService;
 import com.example.demo.entity.student;
@@ -11,7 +12,7 @@ public class StudentServiceImpl implements StudentService{
     StudentRepository stdreps;
     @override
     public student poststudent(student st){
-        
+        return stdrepo.save(st);
 
     }
 
