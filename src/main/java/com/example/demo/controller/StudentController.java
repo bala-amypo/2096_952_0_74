@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,5 +17,10 @@ public class StudentController {
     @PostMapping("/addstudent")
     public Student addStudent(@RequestBody Student st) {
         return stdser.postStudent(st);
+    }
+
+    @GetMapping("/allstudents")
+    public List<Student> getAllStudents() {
+        return stdser.getAllStudents();
     }
 }
