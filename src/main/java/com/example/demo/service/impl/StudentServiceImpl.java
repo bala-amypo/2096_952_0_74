@@ -33,7 +33,6 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public String updateData(Long id, Student st) {
-
         Optional<Student> existing = repo.findById(id);
 
         if (existing.isPresent()) {
@@ -43,7 +42,6 @@ public class StudentServiceImpl implements StudentService {
             s.setDob(st.getDob());
             s.setCgpa(st.getCgpa());
             repo.save(s);
-
             return "Updated Successfully";
         }
 

@@ -11,23 +11,20 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "Name should not be empty")
-    @Size(min = 3, max = 50, message = "Name must be between 3 to 50 characters")
+    @NotBlank
     private String name;
 
-    @NotBlank(message = "Department cannot be blank")
+    @NotBlank
     private String dept;
 
-    @Past(message = "Date of birth must be in the past")
-    @NotNull(message = "Date of birth cannot be null")
+    @Past
     private LocalDate dob;
 
-    @DecimalMin(value = "0.0", message = "CGPA must be at least 0.0")
-    @DecimalMax(value = "10.0", message = "CGPA cannot exceed 10.0")
+    @DecimalMin("0.0")
+    @DecimalMax("10.0")
     private float cgpa;
 
-    public Student() {
-    }
+    public Student() {}
 
     public Student(Long id, String name, String dept, LocalDate dob, float cgpa) {
         this.id = id;
@@ -37,5 +34,18 @@ public class Student {
         this.cgpa = cgpa;
     }
 
-    
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+
+    public String getDept() { return dept; }
+    public void setDept(String dept) { this.dept = dept; }
+
+    public LocalDate getDob() { return dob; }
+    public void setDob(LocalDate dob) { this.dob = dob; }
+
+    public float getCgpa() { return cgpa; }
+    public void setCgpa(float cgpa) { this.cgpa = cgpa; }
 }
