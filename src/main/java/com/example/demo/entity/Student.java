@@ -1,6 +1,7 @@
 package com.example.demo.entity;
 
 import java.time.LocalDate;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 
@@ -11,17 +12,19 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
+    @NotBlank(message = "Student name cannot be empty")
+    @Size(min = 3, max = 50, message = "Student name must be between 3 and 50 characters")
     private String name;
 
-    @NotBlank
+    @NotBlank(message = "Department cannot be blank")
     private String dept;
 
-    @Past
+    @Past(message = "Date of birth must be a past date")
+    @NotNull(message = "Date of birth is mandatory")
     private LocalDate dob;
 
-    @DecimalMin("0.0")
-    @DecimalMax("10.0")
+    @DecimalMin(value = "0.0", message = "CGPA must be equal or greater than 0.0")
+    @DecimalMax(value = "10.0", message = "CGPA must be equal or less than 10.0")
     private float cgpa;
 
     public Student() {}
