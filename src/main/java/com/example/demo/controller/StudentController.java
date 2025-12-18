@@ -5,11 +5,10 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import jakarta.validation.Valid;
 
 import com.example.demo.service.StudentService;
 import com.example.demo.entity.Student;
-
-import jakarta.validation.Valid;
 
 @RestController
 public class StudentController {
@@ -17,6 +16,7 @@ public class StudentController {
     @Autowired
     private StudentService stdser;
 
+    // POST WITH @Valid
     @PostMapping("/addstudent")
     public Student addStudent(@Valid @RequestBody Student st) {
         return stdser.postStudent(st);
@@ -32,6 +32,7 @@ public class StudentController {
         return stdser.getById(id);
     }
 
+    // PUT WITH @Valid
     @PutMapping("/update/{id}")
     public String update(@PathVariable Long id, @Valid @RequestBody Student st) {
         return stdser.updateData(id, st);
