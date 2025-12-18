@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -23,7 +24,7 @@ public class StudentController {
         return stdser.getAllStudents();
     }
     @GetMapping("/getById/{id}")
-    public Faculty getbyId(@PathVariable int id) {
-        return service.getById(id);
+    public Optional getId(@PathVariable Long id) {
+        return stdser.getById(id);
     }
 }

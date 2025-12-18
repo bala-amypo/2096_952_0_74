@@ -1,6 +1,7 @@
 package com.example.demo.service.impl;
 
 import java.util.*;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,7 +25,7 @@ public class StudentServiceImpl implements StudentService {
     public List<Student> getAllStudents() {
         return stdRepo.findAll();
     }
-    @Overide
+    @Override
     public Optional<Student>getById(Long id){
         return stdrepo.findById(id);
     }
