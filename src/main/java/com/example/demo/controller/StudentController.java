@@ -23,12 +23,14 @@ public class StudentController {
     public List<Student> getAllStudents() {
         return stdser.getAllStudents();
     }
+
     @GetMapping("/getById/{id}")
-    public Optional getId(@PathVariable Long id) {
+    public Optional<Student> getId(@PathVariable Long id) {
         return stdser.getById(id);
     }
+
     @PutMapping("/update/{id}")
-    public String update(@PathVariable Long id,@RequestBody Student st){
-        return stdser.updateData(id,st);
-        }
+    public String update(@PathVariable Long id, @RequestBody Student st) {
+        return stdser.updateData(id, st);
+    }
 }
