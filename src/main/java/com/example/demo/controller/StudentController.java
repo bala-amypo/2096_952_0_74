@@ -22,4 +22,8 @@ public class StudentController {
     public List<Student> getAllStudents() {
         return stdser.getAllStudents();
     }
+    @GetMapping("/getById/{id}")
+    public Faculty getbyId(@PathVariable int id) {
+        return service.getById(id);
+    }
 }
